@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Web Development Registration</h2>
+        <form action="register.php" method="POST">
+            <!-- Full Name -->
+            <div class="mb-3">
+                <label for="full_name" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="full_name" name="full_name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <!-- Contact Number -->
+            <div class="mb-3">
+                <label for="contact_number" class="form-label">Contact Number:</label>
+                <input type="tel" class="form-control" id="contact_number" name="contact_number" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender:</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Organization/Institution -->
+            <div class="mb-3">
+                <label for="organization" class="form-label">Organization/Institution:</label>
+                <input type="text" class="form-control" id="organization" name="organization" required>
+            </div>
+
+            <!-- Designation -->
+            <div class="mb-3">
+                <label for="designation" class="form-label">Designation:</label>
+                <select class="form-select" id="designation" name="designation" onchange="toggleDepartmentField()" required>
+                    <option value="Student">Student</option>
+                    <option value="Faculty">Faculty</option>
+                </select>
+            </div>
+
+            <!-- Department (only for Students) -->
+            <div id="department-field" class="mb-3 department-field">
+                <label for="department" class="form-label">Department:</label>
+                <select class="form-select" id="department" name="department">
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Workshop Name -->
+            <div class="mb-3">
+                <label for="workshop_name" class="form-label">Workshop Name:</label>
+                <select class="form-select" id="workshop_name" name="workshop_name" required>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                </select>
+            </div>
+
+            <!-- Mode of Workshop -->
+            <div class="mb-3">
+                <label class="form-label">Mode of Workshop:</label>
+                <div class="radio-group">
+                    <div class="form-check">
+                        <input type="radio" id="online" name="workshop_mode" value="Online" required>
+                        <label for="online">Online</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="offline" name="workshop_mode" value="Offline" required>
+                        <label for="offline">Offline</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Number -->
+            <div class="mb-3">
+                <label for="registration_number" class="form-label">Registration Number:</label>
+                <input type="text" class="form-control" id="registration_number" name="registration_number" required>
+                <small class="form-text text-muted">Please enter your college registration number.</small>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+                <button type="submit" class="btn-custom">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to show/hide department field based on designation
+        function toggleDepartmentField() {
+            const designation = document.getElementById("designation").value;
+            const departmentField = document.getElementById("department-field");
+            if (designation === "Student") {
+                departmentField.style.display = "block";
+            } else {
+                departmentField.style.display = "none";
+            }
+        }
+
+        // Initialize department field visibility on page load
+        document.addEventListener("DOMContentLoaded", toggleDepartmentField);
+    </script>
+</body>
+</html>

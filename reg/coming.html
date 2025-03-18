@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coming Soon</title>
+    <style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0e0e0e;
+    color: #fff;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Countdown Container */
+.countdown {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;  /* Space between blocks */
+    padding: 15px;
+    max-width: 100%;
+}
+
+/* Individual Countdown Block */
+.countdown div {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    width: 120px;
+    height: 120px;  /* Make height and width equal */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+}
+
+/* Countdown Unit Label */
+.countdown span {
+    display: block;
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* Hover Effect on Countdown Block */
+.countdown div:hover {
+    background-color: #00c9ff;
+}
+
+/* Coming Soon Text */
+.coming-soon {
+    font-size: 1.25rem;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+/* Social Media Icons */
+.socials {
+    margin-top: 30px;
+}
+
+.socials a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.socials a:hover {
+    color: #00c9ff;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown {
+        font-size: 2rem;
+        gap: 10px;  /* Reduced space between blocks on smaller screens */
+    }
+
+    .countdown div {
+        padding: 15px 25px;
+        font-size: 1.8rem;
+        margin: 10px;
+        width: auto;
+        height: auto;
+    }
+
+    .socials a {
+        font-size: 1.3rem;
+    }
+
+    .coming-soon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        font-size: 1.8rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .countdown div {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        width: auto;
+        margin-bottom: 10px;
+        height: auto; /* Remove fixed height for smaller screens */
+    }
+
+    .socials a {
+        font-size: 1.2rem;
+    }
+
+    .coming-soon {
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We're Launching Soon</h1>
+        <div class="countdown" id="countdown">
+            <div>
+                <span id="days"></span>
+                Days
+            </div>
+            <div>
+                <span id="hours"></span>
+                Hours
+            </div>
+            <div>
+                <span id="minutes"></span>
+                Minutes
+            </div>
+            <div>
+                <span id="seconds"></span>
+                Seconds
+            </div>
+        </div>
+        <p class="coming-soon">Our Events is coming soon. Stay tuned!</p>
+        <div class="socials">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countdownDate = new Date("Mar 31, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            // If the countdown is finished
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "The wait is over!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Colors and Animations */
+:root {
+    --neon-blue: #00f7ff;
+    --electric-purple: #a12dff;
+    --cyber-green: #00ff94;
+    --hologram-pink: #ff00f7;
+    --neon-orange: #ff6d00;
+    --dark-bg: #000000;
+    --light-bg: #151515;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --hover-shadow: rgba(255, 255, 255, 0.3);
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: var(--font-primary);
+    background: var(--dark-bg);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Section */
+.header-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Registration Section */
+.registration-section {
+    padding: 8rem 2rem;
+    text-align: center;
+    background: var(--dark-bg);
+}
+
+/* Event Grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* Event Card */
+/* Set black background */
+body {
+    background-color: #000;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Event Grid */
+.event-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Large-Sized Event Card */
+.event-card {
+    width: 280px; /* Increased size */
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #1c1c1c; /* Dark card background */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Set uniform height for all cards */
+}
+
+/* Hover Effect */
+.event-card:hover {
+    transform: scale(1.07); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Event Card Image */
+.event-card img {
+    width: 100%;
+    height: 180px; /* Adjusted size */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Event Title */
+.event-card h3 {
+    flex-grow: 1; /* Ensures title adjusts dynamically */
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+.register-btn {
+    width: 100%; /* Button takes full width */
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ff9800;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    align-self: flex-end;
+}
+
+.register-btn:hover {
+    background-color: #ffcc80;
+}
+
+/* Register Button */
+.register-btn {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.register-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Footer Styling */
+.custom-footer {
+    background: var(--dark-bg);
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--shadow-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-middle p {
+    font-size: 1.2rem;
+    color: var(--neon-orange);
+    font-weight: 600;
+}
+
+.dot-indicator {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    margin: 0.5rem auto;
+}
+
+.footer-btn {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.footer-btn:hover {
+    background: white;
+    color: black;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    background-color: #000000; /* Dark background color */
+    padding: 10px; /* Add some padding to create space around icons */
+    border-radius: 10px; /* Rounded corners for a softer look */
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+
+/* Copyright Text */
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7); /* Light color for readability */
+    margin-top: 1rem;
+    background: var(--dark-bg); /* Dark background for the footer text */
+    padding: 1rem 0; /* Add padding to make it look better */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+        flex: none;
+        width: 100%;
+    }
+    /* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+/* Card Animations */
+.event-card {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Smooth transition for transform and opacity */
+}
+
+/* Button Animations */
+.register-btn {
+    transition: transform 0.3s ease-out; /* Smooth transition for button scaling */
+}
+

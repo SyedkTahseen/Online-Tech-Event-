@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & ML Workshop Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Gradient Dark Theme */
+            color: rgb(46, 36, 36);
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.85); /* Dark Glass Effect */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 900px;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #ff00ff; /* Neon Pink */
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+        }
+
+        label {
+            font-weight: bold;
+            color: #dcdcdc; /* Light Gray */
+        }
+
+     /* Updated CSS for dropdown and input fields */
+select, input, textarea {
+    background: rgba(0, 0, 0, 0.3); /* Dark background for inputs */
+    color: #dcdcdc; /* Light Gray text */
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Ensure dropdown options are visible */
+select option {
+    background: #1a1a2e; /* Dark background for options */
+    color: #dcdcdc; /* Light Gray text for options */
+}
+
+/* Placeholder text color */
+input::placeholder, textarea::placeholder {
+    color: rgba(0, 255, 255, 0.5);
+}
+
+/* Focus styles */
+input:focus, select:focus, textarea:focus {
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #ff00ff; /* Neon Pink */
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+/* Dropdown focus styles */
+select:focus {
+    background: rgba(0, 255, 255, 0.1); /* Light background on focus */
+    border: 2px solid #ff00ff; /* Neon Pink border */
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+        .btn-custom {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            border: none;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(90deg, #ff00ff, #00ffcc);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>AI & ML Workshop Registration</h1>
+
+        <form method="POST" action="register.php">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="registration_number" class="form-label">Registration Number:</label>
+                    <input type="text" class="form-control" id="registration_number" name="registration_number" pattern="[0-9]{10}" required placeholder="10-digit number">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Full Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Your name">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address:</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Your email">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="contact" class="form-label">Contact Number:</label>
+                    <input type="text" class="form-control" id="contact" name="contact" required placeholder="Your phone number">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="session" class="form-label">Preferred Session:</label>
+                    <select class="form-select" id="session" name="session" required>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="college_name" class="form-label">College Name:</label>
+                    <input type="text" class="form-control" id="college_name" name="college_name" required placeholder="Your college">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="department" class="form-label">Department:</label>
+                    <input type="text" class="form-control" id="department" name="department" required placeholder="Your department">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="year" class="form-label">Year of Study:</label>
+                    <input type="number" class="form-control" id="year" name="year" min="1" max="4" required placeholder="Your year">
+                </div>
+
+                <div class="col-12">
+                    <label for="message" class="form-label">Additional Message (Optional):</label>
+                    <textarea class="form-control" id="message" name="message" placeholder="Any additional info..." rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-custom mt-3">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
