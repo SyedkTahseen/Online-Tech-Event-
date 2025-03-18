@@ -49,7 +49,7 @@ header {
     .logo {
         justify-content: flex-start !important; /* Align logo to the left */
         padding-left: 20px !important; /* Left padding */
-        margin-left: 70px !important; /* Slight negative margin to nudge left */
+        margin-left: 40px !important; /* Slight negative margin to nudge left */
     }
 
     .nav-links {
