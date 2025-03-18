@@ -35,26 +35,7 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo Section */
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    justify-content: center; /* Default to center on larger screens */
-}
 
-/* Logo Image Styling */
-.logo-img {
-    width: 35px;
-    height: 35px;
-    margin-right: 12px;
-    border-radius: 50%;
-    border: 2px solid white;
-    overflow: hidden; /* Ensure image stays circular */
-}
 
 /* Adjust Logo Position for Mobile */
 @media (max-width: 768px) {
@@ -62,13 +43,13 @@ header {
         flex-direction: column;
         align-items: flex-start; /* Align header content to the left */
         padding: 10px 20px;
-        text-align: left;
+        text-align: center;
     }
 
     .logo {
         justify-content: flex-start !important; /* Align logo to the left */
         padding-left: 20px !important; /* Left padding */
-        margin-left: -10px !important; /* Slight negative margin to nudge left */
+        margin-left: 70px !important; /* Slight negative margin to nudge left */
     }
 
     .nav-links {
