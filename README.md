@@ -3,6 +3,8 @@
 ## Overview
 The Online Tech Event Registration System is a web-based platform designed to facilitate the organization, management, and participation in technical events. Built for Techblaze and TechFest 2025, this system provides a seamless experience for event organizers and attendees. It includes features such as event registration, event browsing, team and faculty showcases, and a contact form for inquiries. The platform is responsive, user-friendly, and styled with a modern, tech-inspired design.
 
+- **Visite Websiter:**: https://syedktahseen.github.io/Online-Tech-Event-/home/header.html
+
 ## Features
 - **Event Listings**: Browse upcoming events like AI & Machine Learning Conference, Cybersecurity Workshop, and Blockchain Summit.
 - **Event Registration**: Users can register for events with a single click, with redirection to the registration page.
